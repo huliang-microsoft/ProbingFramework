@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "ServiceStub.Protos";
+
+package probing;
+
+// The greeting service definition.
+service Probing {
+  // Sends a greeting
+  rpc MirrorRequests (ProbingRequest) returns (stream ProbingResponse);
+}
+
+// The request message containing the user's name.
+message ProbingRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message ProbingResponse {
+  string message = 1;
+}
